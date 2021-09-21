@@ -1,0 +1,49 @@
+public class Main {
+    //1. Создать класс "Сотрудник" с полями: ФИО, должность, email, телефон, зарплата, возраст.
+    //2. Конструктор класса должен заполнять эти поля при создании объекта.
+    //3. Внутри класса «Сотрудник» написать метод, который выводит информацию об объекте в консоль.
+    //4. Создать массив из 5 сотрудников.
+    //5. С помощью цикла вывести информацию только о сотрудниках старше 40 лет.
+
+    public static void main(String[] args) {
+        Person[] persArray = new Person[5];
+        persArray[0] = new Person("Иванов Иван", "Тестировшик", "test@mailbox.com", "9022361245", 50000, 35);
+        persArray[1] = new Person("Петров Пётр", "Разработчик", "raz@mailbox.com", "9025656611", 55000, 25);
+        persArray[2] = new Person("Романов Роман", "Дизайнер", "diz@mailbox.com", "9027569925", 45000, 30);
+        persArray[3] = new Person("Николаев Николай", "DevOps Инженер", "dev@mailbox.com", "9024568822", 65000, 41);
+        persArray[4] = new Person("Павлов Павел", "Teamlead", "team@mailbox.com", "9023492594", 80000, 45);
+        for (int i = 0; i < persArray.length; i++) {
+            if (persArray[i].age > 40) {
+                persArray[i].showPerson();
+            }
+        }
+    }
+}
+
+class Person {
+   private String name;
+   private String position;
+   private String email;
+   private String phone;
+   private int payment;
+   public int age;
+
+    public Person(String name, String position, String email, String phone, int payment, int age){
+        this.name = name;
+        this.position = position;
+        this.email = email;
+        this.phone = phone;
+        this.payment = payment;
+        this.age = age;
+    }
+
+    public void showPerson(){
+        System.out.println(name+ "\n-"
+            +position+ "\n-"
+            +email+ "\n-"
+            +phone+ "\n-"
+            +payment+ "\n-"
+            +age);
+    }
+
+}
