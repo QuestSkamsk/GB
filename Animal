@@ -1,0 +1,27 @@
+abstract class Animal {
+    String name;
+    int maximumDistanceForSwim;
+    int maximumDistanceForRun;
+
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public void Swim(int distance) {
+        if (distance <= this.maximumDistanceForSwim) {
+            System.out.println(this.name + " проплыл " + distance + " м.");
+        } else {
+            System.out.println(this.name + " не может проплыть " + distance + " м.");
+        }
+    }
+
+    public void Run(int distance) {
+        if (distance <= this.maximumDistanceForRun) {
+            System.out.println(this.name + " пробежал " + distance + " м.");
+        } else {
+            System.out.println(this.name + " не может пробежать " + distance + " м.");
+        }
+    }
+
+}
