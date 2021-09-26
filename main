@@ -1,0 +1,21 @@
+class main {
+    public main() {
+    }
+
+    public static void main(String[] args) {
+
+        Animal MyCat = new Cat("Барсик");
+        Animal MyCat1 = new Cat("Мурзик");
+        MyCat.Swim(60);
+        MyCat.Run(100);
+        MyCat1.Swim(0);
+        MyCat1.Run(200);
+        Animal MyDog = new Dog("Шарик");
+        Animal MyDog1 = new Dog("Бобик");
+        MyDog.Swim(10);
+        MyDog.Run(600);
+        MyDog1.Swim(20);
+        MyDog1.Run(300);
+
+    }
+}
