@@ -1,0 +1,23 @@
+class main{
+    public static void main(String[] args) {
+
+        Cat[] cat = new Cat[3];
+        cat[0] = new Cat("Мурзик", 300);
+        cat[1] = new Cat("Борис", 350);
+        cat[2] = new Cat("Комок", 200);
+        Plate plate = new Plate(300);
+        System.out.println("Три кота: " + cat[0].getName() + ", " + cat[1].getName() + " и " + cat[2].getName());
+        System.out.println("Количество корма в миске " + plate.getFood() + " грамм.\n");
+        for (Cat i : cat) {
+            if (i.getSatiety() == 0) {
+                if (!plate.checkEat(i.getHungry())) {
+                    plate.increaseEat();
+                }
+                i.eat(plate);
+                System.out.println(i.getName() + " съел " + i.getHungry() + " граммов корма." + " Уровень голода = " + (i.getSatiety()));
+            }
+            i.setSatiety(i.getSatiety() - 1);
+        }
+        System.out.println("\nВ миске осталось " + plate.getFood() + " граммов корма.\n");
+    }
+}
