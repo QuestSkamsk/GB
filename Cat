@@ -1,0 +1,34 @@
+class Cat {
+    private String name;
+    private int hungry;
+    private int satiety;
+
+
+    String getName() {
+        return name;
+    }
+
+    int getHungry() {
+        return hungry;
+    }
+
+    int getSatiety() {
+        return satiety;
+    }
+
+    void setSatiety(int satiety) {
+        this.satiety = satiety;
+    }
+
+    Cat(String name, int hungry) {
+
+        this.name = name;
+        this.hungry = hungry;
+        this.satiety = 0;
+    }
+
+    void eat(Plate p) {
+        p.decreaseFood(hungry);
+
+    }
+}
