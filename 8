@@ -1,0 +1,52 @@
+import java.awt.event.ActionListener;
+
+public class Main extends JFrame {
+
+    int counter = 0;
+
+    // конструктор
+
+    public Main(){ //передача параметров
+        setTitle("First app"); //заголовок окна
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); //закрытие окна
+        setBounds(400, 400, 600, 600); // размер окна
+
+        JLabel lebel = new JLabel();
+
+        setLayout(new GridLayout(1, 3));
+
+        JButton buttonMinus = new JButton("-");
+
+        buttonMinus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                counter--;
+                lebel.setText(String.valueOf(counter));
+            }
+        });
+
+        JButton buttonPlus = new JButton("+");
+
+        buttonPlus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                counter++;
+                lebel.setText(String.valueOf(counter));
+            }
+        });
+        add(buttonMinus);
+        add(lebel);
+        add(buttonPlus);
+
+
+        setVisible(true); //видимость окна
+
+    }
+
+
+    public static void main(String[] args) {
+
+            new Main(); //вызов конструктора
+
+    }
+}
